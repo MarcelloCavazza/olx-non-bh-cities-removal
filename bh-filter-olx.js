@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Olx
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Remove todas as cidades que não são BH
 // @author       Marcello Cavazza
 // @match        https://www.olx.com.br/*
@@ -29,6 +29,7 @@
     document.body.appendChild(button);
 
     button.addEventListener('click', function () {
+    console.log('starting olx cleaning script')
       const lojasGrid = document.getElementsByClassName('AdListing_gridLayout__DTjHC');
 
       lojasGrid[0].childNodes.forEach((loja) => {
@@ -39,5 +40,6 @@
             loja.style.display = 'none'
           }
       });
+    console.log('ending olx cleaning script')
     });
 })();
