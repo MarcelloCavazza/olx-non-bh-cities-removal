@@ -29,17 +29,15 @@
     document.body.appendChild(button);
 
     button.addEventListener('click', function () {
-    console.clear();
-    const lojasGrid = document.getElementsByClassName('AdListing_gridLayout__DTjHC');
-    console.log(lojasGrid[0]);
+      const lojasGrid = document.getElementsByClassName('AdListing_gridLayout__DTjHC');
 
-    lojasGrid[0].childNodes.forEach((loja) => {
-        console.log(loja);
-        var lojaLocalizacao = loja.textContent.trim();
-        if (lojaLocalizacao.toLowerCase().replaceAll(" ", "").indexOf("belohorizonte") == -1)
-        {
-          loja.style.display = 'none'
-        }
+      lojasGrid[0].childNodes.forEach((loja) => {
+          var lojaLocalizacao = loja.textContent.trim();
+          
+          if (lojaLocalizacao.toLowerCase().replaceAll(" ", "").indexOf("belohorizonte") == -1)
+          {
+            loja.style.display = 'none'
+          }
+      });
     });
-});
 })();
